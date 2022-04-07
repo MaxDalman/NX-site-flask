@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block title %}Главная страница{% endblock %}
+{% block body %}
+<h1>Список пользователей</h1>
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">name</th>
+        <th scope="col">email</th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+ 
+
+    {% for user in users %}        
+      <tr>
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>
+
+        <form action="/admin/deleteUser/{{user.id}}" method="post">
+          <input type="submit" class="btn btn-danger" value="Удалить" name="deluser"></input>
+        </form>
+      </td>
+
+      </tr>
+    {% endfor %}
+
+</tbody>
+  </table>
+
+<form  method="post">
+    <label for="name">name:</label>
+    <input id="name" type="text" name="name"  size="50" placeholder="user1"><br><br>
+    <label for="email">email:</label>
+    <input id="email" type="text" name="email"  size="50" placeholder="aaa@mail.ru"><br><br>
+    <input type="submit" value="Добавить" class="btn btn-success">
+</form>
+
+{% endblock %}

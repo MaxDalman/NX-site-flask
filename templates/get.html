@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Пример GET запроса{% endblock %}
+
+{% block body %}
+
+
+{% for i in range(pages) %}
+<button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href = '/users/{{i+1}}'">{{i+1}}</button>
+{% endfor %}
+
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    {% for i in out_json %}      
+    <div class="col">
+      <div class="card mb-4 shadow-sm">
+      <div class="card-header">
+        <h4 class="my-0 font-weight-normal">{{i.id}}: {{i.first_name}} {{i.last_name}}</h4>
+      </div>
+      <div class="card-body">
+        <img src="{{i.avatar}}" alt="{{i.first_name}}">
+        <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ мес.</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+
+        </ul>
+        <button type="button" class="btn btn-lg btn-block btn-outline-primary">Подпишитесь бесплатно</button>
+      </div>
+    </div>
+    </div>
+    {% endfor %}
+{%endblock%}
