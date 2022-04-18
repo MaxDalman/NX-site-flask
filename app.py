@@ -24,7 +24,7 @@ def create_db():
     try:
         db.create_all()
         user = User(id=1,username='admin',email='admin@mail.ru')
-        guest = User(id=2,username='guest',email='vova@gmail.com')
+        guest = User(id=2,username='guest',email='maksimdaubert@gmail.com')
         db.session.add(user)
         db.session.add(guest)
         db.session.commit()
@@ -89,7 +89,7 @@ def admin():
 @app.route('/admin/deleteUser/<id>',methods=['POST']) 
 @login_required
 def admin_del(id):
-    if current_user.username != 'admin':
+    if current_user.username != 'Максим Дауберт':
         return redirect('/')
     if request.method == 'POST' :
         try:
