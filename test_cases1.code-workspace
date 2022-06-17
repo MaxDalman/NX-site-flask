@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "test_cases1",
+			"path": "G:\\repo_projects\\bootcamp_rf\\test_cases1"
+		},
+		{
+			"name": "resources1",
+			"path": "G:\\repo_projects\\bootcamp_rf\\resources1"
+		},
+		{
+			"name": "Robot_Framework",
+			"path": "..\\www\\VSC_Python\\Robot_Framework"
+		}
+	],
+	"settings": {}
+}
